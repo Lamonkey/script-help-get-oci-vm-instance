@@ -44,6 +44,7 @@ def get_logs(job_id: str) -> str:
         return run([
             "oci", "resource-manager", "job", "get-job-logs",
             "--job-id", job_id,
+            "--all",
             "--query", "data[].message",
             "--raw-output",
         ])
